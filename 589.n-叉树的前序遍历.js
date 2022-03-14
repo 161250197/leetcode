@@ -19,18 +19,18 @@
  */
 var preorder = function(root) {
   if (!root) {
-      return [];
+    return [];
   }
   let nodes = [root];
   let result = [];
   let len = 1;
   for (let i = 0; i < len; i++) {
-      let node = nodes.shift();
-      result.push(node.val);
-      if (node.children && node.children.length) {
-          nodes.unshift(...node.children);
-          len = len + node.children.length;
-      }
+    let node = nodes.shift();
+    result.push(node.val);
+    if (node.children && node.children.length) {
+      nodes.unshift(...node.children);
+      len = len + node.children.length;
+    }
   }
   return result;
 };
